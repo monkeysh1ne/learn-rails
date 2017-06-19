@@ -1,11 +1,12 @@
-<% content_for :title do %>Contact<% end %>
+<% provide(:title, 'Contact') %>
 <h3>Contact</h3>
 <div class="form">
-  <%= simple_form_for @contact do |form| %>
-    <%= form.error_notification %>
-    <%= form.input :name, autofocus: true %>
-    <%= form.input :email %>
-    <%= form.input :content, as: :text %>
-    <%= form.button :submit, 'Submit', class: 'submit' %>
+  <%= simple_form_for @contact do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :name, autofocus: true %>
+    <%= f.input :email, placeholder: 'user@example.com' %>
+    <%= f.input :content, as: :text %>
+    <%= f.button :submit, 'Submit', class: 'submit' %>
+    <p><small>* denotes required field.</small></p>
   <% end %>
 </div>
