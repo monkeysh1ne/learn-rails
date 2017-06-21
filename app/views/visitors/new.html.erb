@@ -1,6 +1,18 @@
-<% provide(:title, 'Home') %> 
-<h3>Home</h3>
-<p>Welcome to the home of <%= @owner.name %>.</p>
-<p>I was born on <%= @owner.birthdate %>.</p>
-<p>Only <%= @owner.countdown %> days until my birthday!</p>
-<p>I am <%= @owner.age %> years old.</p>
+<% provide(:title, 'Foobar Kadigan') %>
+<% provide(:description, 'Website of Foobar Kadigan') %>
+<section>
+  <div class="column">
+    <%= image_tag "big tits forest.jpg" %>
+  </div>
+  <div class="column">
+    <h2>Members enjoy new HD pics daily!</h2>
+    <div class="form-centered">
+      <%= simple_form_for @visitor do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :email, label: false, :placeholder => 'Your email address...' %>
+      <br/>
+      <%= f.button :submit, "Sign up for the newsletter", :class => "submit" %>
+      <% end %>
+    </div>
+  </div>
+</section>
