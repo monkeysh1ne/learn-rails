@@ -7,6 +7,7 @@ class Contact < ActiveRecord::Base
   column :email, :string
   column :content, :string
 
+  # form validation rules
   validates_presence_of :name
   validates_presence_of :email
   validates_presence_of :content
@@ -18,7 +19,7 @@ class Contact < ActiveRecord::Base
     # Authenticate a session with your Service Account
     session = GoogleDrive::Session.from_service_account_key("client_secret.json")
      
-    # Get the spreadsheet by its title
+    # Get the spreadsheet by its title (spreadsheet already manually created & shared with 'learn-rails' user)
     spreadsheet = session.spreadsheet_by_title("learn-rails")
     # Get the first worksheet
     worksheet = spreadsheet.worksheets.first
